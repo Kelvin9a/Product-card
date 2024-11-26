@@ -1,0 +1,195 @@
+ /* Root section for variables */
+:root {
+     /* Primary colors */
+      --Darkcyan: hsl(158, 36%, 37%);
+      --Darkcyan2: hsl(158, 36%, 20%);
+      --Cream: hsl(30, 38%, 92%);
+
+      /* Neutral colors */
+      --Verydarkblue: hsl(212, 21%, 14%);
+      --Darkgrayishblue: hsl(228, 12%, 48%);
+      --White: hsl(0, 0%, 100%);
+
+      /* Font size */
+      --fsize: 0.875rem;
+
+      /* Font weights */
+      --fwght: 500;
+      --fwghtbold: 700;
+
+      /* Font Family */
+      --Montserrat: "Montserrat", sans-serif;
+      --Fraunces: "Fraunces", serif;
+}
+
+
+  /* Using Josh Cameau css reset. */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+   box-sizing: border-box;
+ }
+ 
+ /* 2. Remove default margin */
+ * {
+   margin: 0;
+ }
+
+  h1, h2, h3 {
+    line-height: 1.1rem;
+  }
+
+ body {
+   /* 3. Add accessible line-height */
+   line-height: 1.7rem;
+   /* 4. Improve text rendering */
+   -webkit-font-smoothing: antialiased;
+ }
+ 
+ /* 5. Improve media defaults */
+ img, picture, video, canvas, svg {
+   display: block;
+   max-width: 100%;
+ }
+ 
+ /* 6. Inherit fonts for form controls */
+ input, button, textarea, select {
+   font: inherit;
+ }
+ 
+ /* 7. Avoid text overflows */
+ p, h1, h2, h3, h4, h5, h6 {
+   overflow-wrap: break-word;
+ }
+ 
+ 
+ 
+ /* General styling */
+
+ /* Body styling */
+ body{
+   color: var(--Darkgrayishblue);
+   background-color: var(--Cream);
+   font-size: var(--fsize);
+   font-weight: var(--fwght);
+   font-family: var(--Montserrat);
+   display: grid;
+   place-content: center;
+   margin: 1rem;
+ }
+
+ /* Product_content styling */
+ .Product_price{
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   flex-wrap: wrap;
+  }
+
+  @keyframes slidein {
+    0%{
+        transform:translateX(-400px);
+        opacity: .2;
+    }
+    50%{
+        transform:translateX(150px);
+        opacity: .6s;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+ .Product_card{
+  animation: slidein 3s ease-in 0.3s  ;
+  background-color: var(--White);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  --Product_Content-padding:1.5rem; /* Using this variable to store and update my product content padding. its alot more fun this way */
+  --Content_spacing:1rem; /* Using this variable to store and update my product content spacing. its alot more fun this way */
+  }
+
+    /* Responsive styling using Media Qeries */
+  @media all and (min-width:600px) {
+ .Product_card{
+    display: grid; 
+   grid-template-columns: 1fr 1fr;
+   max-width: 600px;
+   --Product_Content-padding: 2rem;
+  }
+   
+  img {
+    height: 100%;
+  }
+
+   .Product_price{
+    line-height: 2.9rem;
+   }
+ }
+
+
+ .Product_Content{
+     padding: var(--Product_Content-padding);
+     display: grid; /* The display grid helped to increase my button width*/
+     gap: var(--Content_spacing); /* This spaces the contents vertically from each other since its a grid container. */
+   }
+
+ .Content_heading{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.8125rem;
+ }
+
+ .Hero_section{
+  font-size: 2rem;
+  color: var(--Verydarkblue);
+  line-height: 2rem;
+  font-family: var(--Fraunces);
+  font-weight: var(--fwghtbold);
+ }
+
+ .Actual_price{
+  font-size: 2rem;
+  color: var(--Darkcyan);
+  font-family: var(--Fraunces);
+  font-weight: var(--fwghtbold);
+ }
+
+ .Original_price{
+  text-decoration: line-through;
+ }
+
+ /* Button styling */
+ .btn{
+  cursor: pointer;
+  color: var(--White);
+  font-size: 0.875rem;
+  font-weight: var(--fwghtbold);
+  background-color: var(--Darkcyan);
+  padding: 0.55rem 1.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  
+   
+  /* styling the cart icon */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+ }
+
+ .btn[data-cart="shopping-cart"]::before{
+  content: "";  /* The content="", is needed for the element to render. Here the content is left empty because we want to put our shopping-cart icon which is put as a background image as done in the code. Without the content="", Our cart wont show in our button when viewed live. */
+  width: 15px; 
+  height: 16px; 
+  background-image: url(./images/icon-cart.svg);
+ }
+  /* Giving the button a darker background-color when hovered on in its active state */
+
+  .btn:is(:hover, :focus){
+    background-color: var(--Darkcyan2);
+ }
+
+ 
