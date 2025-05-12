@@ -75,7 +75,7 @@
    font-family: var(--Montserrat);
    display: grid;
    place-content: center;
-   margin: 1rem;
+   margin: 200px;
  }
 
  /* Product_content styling */
