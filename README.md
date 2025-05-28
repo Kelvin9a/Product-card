@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://kelvin9a.github.io/Product-card/)
-- Live Site URL: [Add live site URL here](https://kelvin9a.github.io/Product-card/)
+- Solution URL: (https://kelvin9a.github.io/Product-card/)
+- Live Site URL: (https://kelvin9a.github.io/Product-card/)
 
 ## My process
  I started off with the mobile-first design, which made designing the product card alot easier. Then i used media queries to make it responsive, yup easy pizzy. I had fun doing this project added some animations to make things cool a bit.
@@ -57,6 +57,6 @@ To see how you can add code snippets, see below:
 ```
 
 ## Author
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/kelvin9a)
+- Frontend Mentor - [@kelvin9a](https://www.frontendmentor.io/profile/kelvin9a)
 
 
